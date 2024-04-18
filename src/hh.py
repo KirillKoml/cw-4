@@ -10,6 +10,7 @@ class HHApi(AbstractAPI):
     """
 
     def __init__(self, file_worker):
+        self.file_worker = file_worker
         self.url = 'https://api.hh.ru/vacancies'
 
     def get_jobs(self, search_query):
@@ -20,6 +21,6 @@ class HHApi(AbstractAPI):
             response = requests.get(self.url, params=params)
 
             if response.status_code != 200:
-                raise  ConnectionError('Не удолось получить доступ к сайту')
+                raise ConnectionError('Не удолось получить доступ к сайту')
             else:
                 return response.json()['items']
