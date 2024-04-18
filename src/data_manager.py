@@ -8,7 +8,6 @@ class DataManager(AbstractDataManager):
         self.filename = filename
 
     def add_job(self, value):
-
         with open(self.filename, 'a', encoding='utf-8') as file:
             json.dump(value, file, ensure_ascii=False)
             file.write('\n')

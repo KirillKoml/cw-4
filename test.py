@@ -18,5 +18,6 @@ class TestFilters(unittest.TestCase):
 
         self.jobs_list = [self.job1, self.job2, self.job3]
 
+
 if __name__ == '__main__':
     unittest.main()
